@@ -6,9 +6,8 @@ import java.util.List;
 public class ShopKeeper {
         
 	    
-       public List<Product> allProduct;
-       public List<Product>  gstProductWithPriceMoreThan2000 ;
-       
+       private List<Product> allProduct;
+        
        public ShopKeeper() {
     		  allProduct = new ArrayList<Product>();
        }
@@ -24,7 +23,7 @@ public class ShopKeeper {
     	  
 
     	public List<Product> getGSTProductWithPriceGreater2000(double thresholdAmount ) {
-    		 gstProductWithPriceMoreThan2000 = new ArrayList<Product>();
+    		List<Product> gstProductWithPriceMoreThan2000 = new ArrayList<Product>();
     		 for ( Product gstProduct1 : getAllProduct()) {
     			 if(gstProduct1.isGSTEligible()) {
         			 if(gstProduct1.calculateTotalPrice()>thresholdAmount) {
